@@ -164,9 +164,4 @@ public class Password extends Element {
 	protected String getDefaultIdPrefix() {
 		return "password";
 	}
-
-	@Override
-	public String getLinkCssClass() {
-		return null;
-	}
 }
