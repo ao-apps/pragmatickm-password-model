@@ -60,9 +60,4 @@ public class PasswordTable extends Element {
 	protected String getDefaultIdPrefix() {
 		return "password-table";
 	}
-
-	@Override
-	public String getLinkCssClass() {
-		return null;
-	}
 }
