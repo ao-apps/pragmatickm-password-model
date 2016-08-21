@@ -52,11 +52,6 @@ public class PasswordTable extends Element {
 	}
 
 	@Override
-	public String getListItemCssClass() {
-		return "list-item-password-table";
-	}
-
-	@Override
 	protected String getDefaultIdPrefix() {
 		return "password-table";
 	}

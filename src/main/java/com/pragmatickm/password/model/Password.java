@@ -157,11 +157,6 @@ public class Password extends Element {
 	}
 
 	@Override
-	public String getListItemCssClass() {
-		return "list-item-password";
-	}
-
-	@Override
 	protected String getDefaultIdPrefix() {
 		return "password";
 	}
