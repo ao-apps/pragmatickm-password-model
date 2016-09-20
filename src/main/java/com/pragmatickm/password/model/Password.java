@@ -23,6 +23,7 @@
 package com.pragmatickm.password.model;
 
 import com.aoindustries.lang.ObjectUtils;
+import com.aoindustries.util.AoCollections;
 import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.PageRef;
 import java.util.Collections;
@@ -92,67 +93,95 @@ public class Password extends Element {
 
 	@Override
 	public Password freeze() {
-		super.freeze();
-		return this;
+		synchronized(lock) {
+			if(customFields != null) customFields = AoCollections.optimalUnmodifiableMap(customFields);
+			if(secretQuestions != null) secretQuestions = AoCollections.optimalUnmodifiableMap(secretQuestions);
+			super.freeze();
+			return this;
+		}
 	}
 
 	public String getHref() {
-		return href;
+		synchronized(lock) {
+			return href;
+		}
 	}
 
 	public void setHref(String href) {
-		checkNotFrozen();
-		if(href!=null && href.isEmpty()) href = null;
-		this.href = href;
+		synchronized(lock) {
+			checkNotFrozen();
+			if(href!=null && href.isEmpty()) href = null;
+			this.href = href;
+		}
 	}
 
 	public String getUsername() {
-		return username;
+		synchronized(lock) {
+			return username;
+		}
 	}
 
 	public void setUsername(String username) {
-		checkNotFrozen();
-		if(username!=null && username.isEmpty()) username = null;
-		this.username = username;
+		synchronized(lock) {
+			checkNotFrozen();
+			if(username!=null && username.isEmpty()) username = null;
+			this.username = username;
+		}
 	}
 
 	public String getPassword() {
-		return password;
+		synchronized(lock) {
+			return password;
+		}
 	}
 
 	public void setPassword(String password) {
-		checkNotFrozen();
-		this.password = password;
+		synchronized(lock) {
+			checkNotFrozen();
+			this.password = password;
+		}
 	}
 
 	public Map<String,CustomField> getCustomFields() {
-		if(customFields == null) return Collections.emptyMap();
-		return Collections.unmodifiableMap(customFields);
+		synchronized(lock) {
+			if(customFields == null) return Collections.emptyMap();
+			if(frozen) return customFields;
+			return AoCollections.unmodifiableCopyMap(customFields);
+		}
 	}
 
 	public void addCustomField(String name, PageRef pageRef, String element, String value) {
-		checkNotFrozen();
-		if(customFields == null) customFields = new LinkedHashMap<String,CustomField>();
-		if(customFields.put(name, new CustomField(pageRef, element, value)) != null) throw new IllegalStateException("Duplicate custom field: " + name);
-		if(pageRef != null) addPageLink(pageRef);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(customFields == null) customFields = new LinkedHashMap<String,CustomField>();
+			if(customFields.put(name, new CustomField(pageRef, element, value)) != null) throw new IllegalStateException("Duplicate custom field: " + name);
+			if(pageRef != null) addPageLink(pageRef);
+		}
 	}
 
 	public Map<String,String> getSecretQuestions() {
-		if(secretQuestions == null) return Collections.emptyMap();
-		return Collections.unmodifiableMap(secretQuestions);
+		synchronized(lock) {
+			if(secretQuestions == null) return Collections.emptyMap();
+			if(frozen) return secretQuestions;
+			return AoCollections.unmodifiableCopyMap(secretQuestions);
+		}
 	}
 
 	public void addSecretQuestion(String question, String answer) {
-		checkNotFrozen();
-		if(secretQuestions == null) secretQuestions = new LinkedHashMap<String,String>();
-		if(secretQuestions.put(question, answer) != null) throw new IllegalStateException("Duplicate secret question: " + question);
+		synchronized(lock) {
+			checkNotFrozen();
+			if(secretQuestions == null) secretQuestions = new LinkedHashMap<String,String>();
+			if(secretQuestions.put(question, answer) != null) throw new IllegalStateException("Duplicate secret question: " + question);
+		}
 	}
 
 	@Override
 	public String getLabel() {
-		//if(username != null) return username;
-		//if(href != null) return href;
-		if(password != null) return password;
+		synchronized(lock) {
+			//if(username != null) return username;
+			//if(href != null) return href;
+			if(password != null) return password;
+		}
 		return "Password";
 	}
 

@@ -37,18 +37,24 @@ public class PasswordTable extends Element {
 	}
 
 	public String getHeader() {
-		return header;
+		synchronized(lock) {
+			return header;
+		}
 	}
 
 	public void setHeader(String header) {
-		checkNotFrozen();
-		if(header != null && header.isEmpty()) header = null;
-		this.header = header;
+		synchronized(lock) {
+			checkNotFrozen();
+			if(header != null && header.isEmpty()) header = null;
+			this.header = header;
+		}
 	}
 
 	@Override
 	public String getLabel() {
-		return header==null ? DEFAULT_HEADER : header;
+		synchronized(lock) {
+			return header==null ? DEFAULT_HEADER : header;
+		}
 	}
 
 	@Override
