@@ -22,6 +22,7 @@
  */
 package com.pragmatickm.password.model;
 
+import com.aoindustries.util.StringUtility;
 import com.semanticcms.core.model.Element;
 
 public class PasswordTable extends Element {
@@ -45,15 +46,14 @@ public class PasswordTable extends Element {
 	public void setHeader(String header) {
 		synchronized(lock) {
 			checkNotFrozen();
-			// Allowing empty string to suppress default header
-			this.header = header;
+			this.header = StringUtility.nullIfEmpty(header);
 		}
 	}
 
 	@Override
 	public String getLabel() {
 		synchronized(lock) {
-			return header==null || header.isEmpty() ? DEFAULT_HEADER : header;
+			return header==null ? DEFAULT_HEADER : header;
 		}
 	}
 
