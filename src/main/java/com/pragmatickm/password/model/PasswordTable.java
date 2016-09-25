@@ -45,7 +45,7 @@ public class PasswordTable extends Element {
 	public void setHeader(String header) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(header != null && header.isEmpty()) header = null;
+			// Allowing empty string to suppress default header
 			this.header = header;
 		}
 	}
@@ -53,7 +53,7 @@ public class PasswordTable extends Element {
 	@Override
 	public String getLabel() {
 		synchronized(lock) {
-			return header==null ? DEFAULT_HEADER : header;
+			return header==null || header.isEmpty() ? DEFAULT_HEADER : header;
 		}
 	}
 

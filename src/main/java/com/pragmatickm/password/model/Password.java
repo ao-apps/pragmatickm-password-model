@@ -22,8 +22,10 @@
  */
 package com.pragmatickm.password.model;
 
+import com.aoindustries.lang.NullArgumentException;
 import com.aoindustries.lang.ObjectUtils;
 import com.aoindustries.util.AoCollections;
+import static com.aoindustries.util.StringUtility.nullIfEmpty;
 import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.PageRef;
 import java.util.Collections;
@@ -39,9 +41,10 @@ public class Password extends Element {
 		private final String value;
 
 		public CustomField(PageRef pageRef, String element, String value) {
+			value = nullIfEmpty(value);
 			if(pageRef == null && value == null) throw new IllegalArgumentException("At least one of page or value must be provided.");
 			this.pageRef = pageRef;
-			this.element = element;
+			this.element = nullIfEmpty(element);
 			this.value = value;
 		}
 
@@ -110,8 +113,7 @@ public class Password extends Element {
 	public void setHref(String href) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(href!=null && href.isEmpty()) href = null;
-			this.href = href;
+			this.href = nullIfEmpty(href);
 		}
 	}
 
@@ -124,8 +126,7 @@ public class Password extends Element {
 	public void setUsername(String username) {
 		synchronized(lock) {
 			checkNotFrozen();
-			if(username!=null && username.isEmpty()) username = null;
-			this.username = username;
+			this.username = nullIfEmpty(username);
 		}
 	}
 
@@ -138,7 +139,7 @@ public class Password extends Element {
 	public void setPassword(String password) {
 		synchronized(lock) {
 			checkNotFrozen();
-			this.password = password;
+			this.password = nullIfEmpty(password);
 		}
 	}
 
@@ -151,6 +152,8 @@ public class Password extends Element {
 	}
 
 	public void addCustomField(String name, PageRef pageRef, String element, String value) {
+		name = nullIfEmpty(name);
+		NullArgumentException.checkNotNull(name, "name");
 		synchronized(lock) {
 			checkNotFrozen();
 			if(customFields == null) customFields = new LinkedHashMap<String,CustomField>();
@@ -168,6 +171,10 @@ public class Password extends Element {
 	}
 
 	public void addSecretQuestion(String question, String answer) {
+		question = nullIfEmpty(question);
+		answer = nullIfEmpty(answer);
+		NullArgumentException.checkNotNull(question, "question");
+		NullArgumentException.checkNotNull(answer, "answer");
 		synchronized(lock) {
 			checkNotFrozen();
 			if(secretQuestions == null) secretQuestions = new LinkedHashMap<String,String>();
