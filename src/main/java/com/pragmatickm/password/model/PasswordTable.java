@@ -29,32 +29,21 @@ public class PasswordTable extends Element {
 
 	private static final String DEFAULT_HEADER = "Passwords";
 
-	private String header = DEFAULT_HEADER;
-
-	@Override
-	public PasswordTable freeze() {
-		super.freeze();
-		return this;
-	}
+	private volatile String header = DEFAULT_HEADER;
 
 	public String getHeader() {
-		synchronized(lock) {
-			return header;
-		}
+		return header;
 	}
 
 	public void setHeader(String header) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.header = StringUtility.nullIfEmpty(header);
-		}
+		checkNotFrozen();
+		this.header = StringUtility.nullIfEmpty(header);
 	}
 
 	@Override
 	public String getLabel() {
-		synchronized(lock) {
-			return header==null ? DEFAULT_HEADER : header;
-		}
+		String h = header;
+		return h==null ? DEFAULT_HEADER : h;
 	}
 
 	@Override

@@ -88,59 +88,49 @@ public class Password extends Element {
 		}
 	}
 
-	private String href;
-	private String username;
-	private String password;
+	private volatile String href;
+	private volatile String username;
+	private volatile String password;
 	private Map<String,CustomField> customFields;
 	private Map<String,String> secretQuestions;
 
 	@Override
 	public Password freeze() {
 		synchronized(lock) {
-			if(customFields != null) customFields = AoCollections.optimalUnmodifiableMap(customFields);
-			if(secretQuestions != null) secretQuestions = AoCollections.optimalUnmodifiableMap(secretQuestions);
-			super.freeze();
-			return this;
+			if(!frozen) {
+				if(customFields != null) customFields = AoCollections.optimalUnmodifiableMap(customFields);
+				if(secretQuestions != null) secretQuestions = AoCollections.optimalUnmodifiableMap(secretQuestions);
+				super.freeze();
+			}
 		}
+		return this;
 	}
 
 	public String getHref() {
-		synchronized(lock) {
-			return href;
-		}
+		return href;
 	}
 
 	public void setHref(String href) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.href = nullIfEmpty(href);
-		}
+		checkNotFrozen();
+		this.href = nullIfEmpty(href);
 	}
 
 	public String getUsername() {
-		synchronized(lock) {
-			return username;
-		}
+		return username;
 	}
 
 	public void setUsername(String username) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.username = nullIfEmpty(username);
-		}
+		checkNotFrozen();
+		this.username = nullIfEmpty(username);
 	}
 
 	public String getPassword() {
-		synchronized(lock) {
-			return password;
-		}
+		return password;
 	}
 
 	public void setPassword(String password) {
-		synchronized(lock) {
-			checkNotFrozen();
-			this.password = nullIfEmpty(password);
-		}
+		checkNotFrozen();
+		this.password = nullIfEmpty(password);
 	}
 
 	public Map<String,CustomField> getCustomFields() {
@@ -184,11 +174,10 @@ public class Password extends Element {
 
 	@Override
 	public String getLabel() {
-		synchronized(lock) {
-			//if(username != null) return username;
-			//if(href != null) return href;
-			if(password != null) return password;
-		}
+		//if(username != null) return username;
+		//if(href != null) return href;
+		String p = password;
+		if(p != null) return p;
 		return "Password";
 	}
 
