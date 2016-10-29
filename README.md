@@ -3,6 +3,7 @@ Passwords nested within [SemanticCMS](https://semanticcms.com/) pages and elemen
 
 ## Project Links
 * [Project Home](https://pragmatickm.com/password/model/)
+* [Changelog](https://pragmatickm.com/password/model/changelog)
 * [API Docs](https://pragmatickm.com/password/model/apidocs/)
 * [Maven Repository](scpexe://private.cvs.aoindustries.com/var/maven2/pragmatickm)
 * [Git](ssh://private.cvs.aoindustries.com/var/git/pragmatickm-password-model)
