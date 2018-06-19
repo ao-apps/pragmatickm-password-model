@@ -1,4 +1,4 @@
-# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://aoindustries.com/) [PragmaticKM](https://pragmatickm.com/) / [Password](https://pragmatickm.com/password/) / [Model](https://pragmatickm.com/password/model/)
+# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/aoindustries) [PragmaticKM](https://github.com/aoindustries/pragmatickm) / [Password](https://github.com/aoindustries/pragmatickm-password) / [Model](https://github.com/aoindustries/pragmatickm-password-model)
 <p>
 	<a href="https://aoindustries.com/life-cycle#project-current-stable">
 		<img src="https://pragmatickm.com/ao-badges/project-current-stable.svg" alt="project: current stable" />
@@ -21,7 +21,7 @@
 	</a>
 </p>
 
-Passwords nested within [SemanticCMS](https://semanticcms.com/) pages and elements.
+Passwords nested within [SemanticCMS](https://github.com/aoindustries/semanticcms) pages and elements.
 
 ## Project Links
 * [Project Home](https://pragmatickm.com/password/model/)
