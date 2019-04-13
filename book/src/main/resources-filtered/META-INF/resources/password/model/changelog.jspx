@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-password-model - Passwords nested within SemanticCMS pages and elements.
-Copyright (C) 2017, 2018  AO Industries, Inc.
+Copyright (C) 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -56,7 +56,7 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 				<ul>
 					<li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2 compatibility.</li>
 				</ul>
-			</changlog:release>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release
