@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-password-model - Passwords nested within SemanticCMS pages and elements.
-Copyright (C) 2017, 2018, 2019  AO Industries, Inc.
+Copyright (C) 2017, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T17:39:09-0500"
-		dateModified="2018-05-30T19:48:33-0500"
+		dateModified="2019-06-06T19:19:16-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-password-model:pom.version}" />
@@ -55,6 +55,13 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 			>
 				<ul>
 					<li>Updated for <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> 2 compatibility.</li>
+					<li>Minimum Java version changed from 1.6 to 1.7.</li>
+					<li>Using managed dependencies:
+						<ol>
+							<li>This project uses transitive managed dependencies.</li>
+							<li>This project's managed dependencies may also be imported by other projects.</li>
+						</ol>
+					</li>
 				</ul>
 			</changelog:release>
 		</c:if>
