@@ -1,6 +1,6 @@
 /*
  * pragmatickm-password-model - Passwords nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,6 @@
 package com.pragmatickm.password.model;
 
 import com.aoindustries.lang.NullArgumentException;
-import com.aoindustries.lang.ObjectUtils;
 import com.aoindustries.util.AoCollections;
 import static com.aoindustries.util.StringUtility.nullIfEmpty;
 import com.semanticcms.core.model.Element;
@@ -31,6 +30,7 @@ import com.semanticcms.core.model.PageRef;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Password extends Element {
 
@@ -60,15 +60,15 @@ public class Password extends Element {
 			if(!(o instanceof CustomField)) return false;
 			CustomField other = (CustomField)o;
 			return
-				ObjectUtils.equals(pageRef, other.pageRef)
-				&& ObjectUtils.equals(element, other.element)
-				&& ObjectUtils.equals(value, other.value)
+				Objects.equals(pageRef, other.pageRef)
+				&& Objects.equals(element, other.element)
+				&& Objects.equals(value, other.value)
 			;
 		}
 
 		@Override
 		public int hashCode() {
-			return ObjectUtils.hash(
+			return Objects.hash(
 				pageRef,
 				element,
 				value
@@ -146,7 +146,7 @@ public class Password extends Element {
 		NullArgumentException.checkNotNull(name, "name");
 		synchronized(lock) {
 			checkNotFrozen();
-			if(customFields == null) customFields = new LinkedHashMap<String,CustomField>();
+			if(customFields == null) customFields = new LinkedHashMap<>();
 			if(customFields.put(name, new CustomField(pageRef, element, value)) != null) throw new IllegalStateException("Duplicate custom field: " + name);
 			if(pageRef != null) addPageLink(pageRef);
 		}
@@ -167,7 +167,7 @@ public class Password extends Element {
 		NullArgumentException.checkNotNull(answer, "answer");
 		synchronized(lock) {
 			checkNotFrozen();
-			if(secretQuestions == null) secretQuestions = new LinkedHashMap<String,String>();
+			if(secretQuestions == null) secretQuestions = new LinkedHashMap<>();
 			if(secretQuestions.put(question, answer) != null) throw new IllegalStateException("Duplicate secret question: " + question);
 		}
 	}
