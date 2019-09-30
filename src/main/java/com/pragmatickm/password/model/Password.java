@@ -51,8 +51,16 @@ public class Password extends Element {
 		@Override
 		public String toString() {
 			if(value != null) return value;
-			if(element == null) return pageRef.toString();
-			return pageRef.toString() + '#' + element;
+			String pageToString = pageRef.toString();
+			if(element == null) return pageToString;
+			int sbLen =
+				pageToString.length()
+				+ 1 // '#'
+				+ element.length();
+			StringBuilder sb = new StringBuilder(sbLen);
+			sb.append(pageToString).append('#').append(element);
+			assert sb.length() == sbLen;
+			return sb.toString();
 		}
 
 		@Override
