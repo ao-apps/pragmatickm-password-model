@@ -65,6 +65,7 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 								<link>${javac.link.javaApi}</link>
 								<!-- Direct -->
 								<link>https://aoindustries.com/ao-lang/apidocs/</link>
+								<link>https://aoindustries.com/ao-net-types/apidocs/</link>
 								<link>https://semanticcms.com/core/model/apidocs/</link>
 							</links>
 						</configuration>
@@ -81,6 +82,9 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>3.2.0-SNAPSHOT</version>
 			</dependency>
 			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><version>1.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>1.10.0-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
@@ -90,6 +94,9 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 		<!-- Direct -->
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>

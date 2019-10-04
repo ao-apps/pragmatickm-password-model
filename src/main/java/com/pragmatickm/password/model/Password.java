@@ -23,6 +23,8 @@
 package com.pragmatickm.password.model;
 
 import com.aoindustries.lang.NullArgumentException;
+import com.aoindustries.net.URIDecoder;
+import com.aoindustries.net.URIEncoder;
 import com.aoindustries.util.AoCollections;
 import static com.aoindustries.util.StringUtility.nullIfEmpty;
 import com.semanticcms.core.model.Element;
@@ -53,12 +55,14 @@ public class Password extends Element {
 			if(value != null) return value;
 			String pageToString = pageRef.toString();
 			if(element == null) return pageToString;
+			// TODO: encodeIRIComponent to do this in one shot?
+			String elementIri = URIDecoder.decodeURI(URIEncoder.encodeURIComponent(element));
 			int sbLen =
 				pageToString.length()
 				+ 1 // '#'
-				+ element.length();
+				+ elementIri.length();
 			StringBuilder sb = new StringBuilder(sbLen);
-			sb.append(pageToString).append('#').append(element);
+			sb.append(pageToString).append('#').append(elementIri);
 			assert sb.length() == sbLen;
 			return sb.toString();
 		}
