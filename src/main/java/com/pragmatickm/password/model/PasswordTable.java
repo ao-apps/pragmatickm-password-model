@@ -1,6 +1,6 @@
 /*
  * pragmatickm-password-model - Passwords nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,7 @@
  */
 package com.pragmatickm.password.model;
 
-import com.aoindustries.util.StringUtility;
+import com.aoindustries.lang.Strings;
 import com.semanticcms.core.model.Element;
 
 public class PasswordTable extends Element {
@@ -37,7 +37,7 @@ public class PasswordTable extends Element {
 
 	public void setHeader(String header) {
 		checkNotFrozen();
-		this.header = StringUtility.nullIfEmpty(header);
+		this.header = Strings.nullIfEmpty(header);
 	}
 
 	@Override
