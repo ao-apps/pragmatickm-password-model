@@ -22,11 +22,11 @@
  */
 package com.pragmatickm.password.model;
 
+import com.aoindustries.collections.AoCollections;
 import com.aoindustries.lang.NullArgumentException;
+import static com.aoindustries.lang.Strings.nullIfEmpty;
 import com.aoindustries.net.URIDecoder;
 import com.aoindustries.net.URIEncoder;
-import com.aoindustries.util.AoCollections;
-import static com.aoindustries.lang.Strings.nullIfEmpty;
 import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.PageRef;
 import java.util.Collections;
