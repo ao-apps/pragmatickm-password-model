@@ -145,6 +145,7 @@ public class Password extends Element {
 		this.password = nullIfEmpty(password);
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public Map<String,CustomField> getCustomFields() {
 		synchronized(lock) {
 			if(customFields == null) return Collections.emptyMap();
@@ -164,6 +165,7 @@ public class Password extends Element {
 		}
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public Map<String,String> getSecretQuestions() {
 		synchronized(lock) {
 			if(secretQuestions == null) return Collections.emptyMap();
