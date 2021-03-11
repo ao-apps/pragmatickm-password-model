@@ -1,6 +1,6 @@
 /*
  * pragmatickm-password-model - Passwords nested within SemanticCMS pages and elements.
- * Copyright (C) 2013, 2014, 2015, 2016, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -103,8 +103,8 @@ public class Password extends Element {
 	private volatile String href;
 	private volatile String username;
 	private volatile String password;
-	private Map<String,CustomField> customFields;
-	private Map<String,String> secretQuestions;
+	private Map<String, CustomField> customFields;
+	private Map<String, String> secretQuestions;
 
 	@Override
 	public Password freeze() {
@@ -146,7 +146,7 @@ public class Password extends Element {
 	}
 
 	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
-	public Map<String,CustomField> getCustomFields() {
+	public Map<String, CustomField> getCustomFields() {
 		synchronized(lock) {
 			if(customFields == null) return Collections.emptyMap();
 			if(frozen) return customFields;
@@ -166,7 +166,7 @@ public class Password extends Element {
 	}
 
 	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
-	public Map<String,String> getSecretQuestions() {
+	public Map<String, String> getSecretQuestions() {
 		synchronized(lock) {
 			if(secretQuestions == null) return Collections.emptyMap();
 			if(frozen) return secretQuestions;
