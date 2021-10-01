@@ -110,8 +110,8 @@ public class Password extends Element {
 	public Password freeze() {
 		synchronized(lock) {
 			if(!frozen) {
-				if(customFields != null) customFields = AoCollections.optimalUnmodifiableMap(customFields);
-				if(secretQuestions != null) secretQuestions = AoCollections.optimalUnmodifiableMap(secretQuestions);
+				customFields = AoCollections.optimalUnmodifiableMap(customFields);
+				secretQuestions = AoCollections.optimalUnmodifiableMap(secretQuestions);
 				super.freeze();
 			}
 		}
