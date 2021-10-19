@@ -29,7 +29,7 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 		<relativePath>../../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-password-model</artifactId><version>1.5.1-SNAPSHOT</version>
+	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-password-model</artifactId><version>1.5.1</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -78,7 +78,7 @@ along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses
 		<connection>scm:git:git://github.com/ao-apps/pragmatickm-password-model.git</connection>
 		<developerConnection>scm:git:git@github.com:ao-apps/pragmatickm-password-model.git</developerConnection>
 		<url>https://github.com/ao-apps/pragmatickm-password-model</url>
-		<tag>HEAD</tag>
+		<tag>pragmatickm-password-model-1.5.1</tag>
 	</scm>
 
 	<issueManagement>
