@@ -18,7 +18,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with pragmatickm-password-model.  If not, see <http://www.gnu.org/licenses/>.
+ * along with pragmatickm-password-model.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.pragmatickm.password.model.book {
 	exports com.pragmatickm.password.model.book;
