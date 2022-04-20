@@ -28,27 +28,27 @@ import com.semanticcms.core.model.Element;
 
 public class PasswordTable extends Element {
 
-	private static final String DEFAULT_HEADER = "Passwords";
+  private static final String DEFAULT_HEADER = "Passwords";
 
-	private volatile String header = DEFAULT_HEADER;
+  private volatile String header = DEFAULT_HEADER;
 
-	public String getHeader() {
-		return header;
-	}
+  public String getHeader() {
+    return header;
+  }
 
-	public void setHeader(String header) {
-		checkNotFrozen();
-		this.header = Strings.nullIfEmpty(header);
-	}
+  public void setHeader(String header) {
+    checkNotFrozen();
+    this.header = Strings.nullIfEmpty(header);
+  }
 
-	@Override
-	public String getLabel() {
-		String h = header;
-		return h==null ? DEFAULT_HEADER : h;
-	}
+  @Override
+  public String getLabel() {
+    String h = header;
+    return h == null ? DEFAULT_HEADER : h;
+  }
 
-	@Override
-	protected String getDefaultIdPrefix() {
-		return "password-table";
-	}
+  @Override
+  protected String getDefaultIdPrefix() {
+    return "password-table";
+  }
 }
