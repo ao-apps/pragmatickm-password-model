@@ -65,9 +65,9 @@ public class Password extends Element {
       // TODO: encodeIRIComponent to do this in one shot?
       String elementIri = URIDecoder.decodeURI(URIEncoder.encodeURIComponent(element));
       int sbLen =
-        pageToString.length()
-        + 1 // '#'
-        + elementIri.length();
+          pageToString.length()
+              + 1 // '#'
+              + elementIri.length();
       StringBuilder sb = new StringBuilder(sbLen);
       sb.append(pageToString).append('#').append(elementIri);
       assert sb.length() == sbLen;
@@ -79,20 +79,20 @@ public class Password extends Element {
       if (!(o instanceof CustomField)) {
         return false;
       }
-      CustomField other = (CustomField)o;
+      CustomField other = (CustomField) o;
       return
-        Objects.equals(pageRef, other.pageRef)
-        && Objects.equals(element, other.element)
-        && Objects.equals(value, other.value)
+          Objects.equals(pageRef, other.pageRef)
+              && Objects.equals(element, other.element)
+              && Objects.equals(value, other.value)
       ;
     }
 
     @Override
     public int hashCode() {
       return Objects.hash(
-        pageRef,
-        element,
-        value
+          pageRef,
+          element,
+          value
       );
     }
 
