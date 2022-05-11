@@ -23,9 +23,10 @@
 
 package com.pragmatickm.password.model;
 
+import static com.aoapps.lang.Strings.nullIfEmpty;
+
 import com.aoapps.collections.AoCollections;
 import com.aoapps.lang.NullArgumentException;
-import static com.aoapps.lang.Strings.nullIfEmpty;
 import com.aoapps.net.URIDecoder;
 import com.aoapps.net.URIEncoder;
 import com.semanticcms.core.model.Element;
@@ -83,8 +84,7 @@ public class Password extends Element {
       return
           Objects.equals(pageRef, other.pageRef)
               && Objects.equals(element, other.element)
-              && Objects.equals(value, other.value)
-      ;
+              && Objects.equals(value, other.value);
     }
 
     @Override
