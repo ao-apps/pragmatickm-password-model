@@ -46,7 +46,7 @@ along with pragmatickm-password-model.  If not, see <https://www.gnu.org/license
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
 
-  <name>PragmaticKM Password Model²</name>
+  <name>PragmaticKM Password Model</name>
   <url>https://pragmatickm.com/password/model/</url>
   <description>Passwords nested within SemanticCMS pages and elements.</description>
   <inceptionYear>2013</inceptionYear>

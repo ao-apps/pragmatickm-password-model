@@ -36,15 +36,15 @@ along with pragmatickm-password-model.  If not, see <https://www.gnu.org/license
     <module.name>com.pragmatickm.password.model.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>pragmatickm-password-model</documented.artifactId>
-    <documented.name>PragmaticKM Password Model²</documented.name>
+    <documented.name>PragmaticKM Password Model</documented.name>
     <documented.description>Passwords nested within SemanticCMS pages and elements.</documented.description>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
 
-  <name>PragmaticKM Password Model² Book</name>
+  <name>PragmaticKM Password Model Book</name>
   <url>https://pragmatickm.com/password/model/</url>
-  <description>Documentation for PragmaticKM Password Model² in SemanticCMS format.</description>
+  <description>Documentation for PragmaticKM Password Model in SemanticCMS format.</description>
   <inceptionYear>2013</inceptionYear>
 
   <licenses>
