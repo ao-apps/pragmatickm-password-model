@@ -22,7 +22,7 @@ Passwords nested within [SemanticCMS](https://github.com/ao-apps/semanticcms) pa
 * [Project Home](https://pragmatickm.com/password/model/)
 * [Changelog](https://pragmatickm.com/password/model/changelog)
 * [API Docs](https://pragmatickm.com/password/model/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.pragmatickm/pragmatickm-password-model)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.pragmatickm&q=a%3Apragmatickm-password-model)
 * [GitHub](https://github.com/ao-apps/pragmatickm-password-model)
 
 ## Contact Us
