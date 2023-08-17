@@ -30,7 +30,7 @@ along with pragmatickm-password-model.  If not, see <https://www.gnu.org/license
   </parent>
 
   <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-password-model</artifactId><version>1.5.1-POST-SNAPSHOT</version>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
 
   <properties>
     <module.name>com.pragmatickm.password.model</module.name>
