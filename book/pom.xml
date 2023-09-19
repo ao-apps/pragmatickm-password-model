@@ -41,6 +41,9 @@ along with pragmatickm-password-model.  If not, see <https://www.gnu.org/license
     <documented.artifactId>pragmatickm-password-model</documented.artifactId>
     <documented.name>PragmaticKM Password Model</documented.name>
     <documented.description>Passwords nested within SemanticCMS pages and elements.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
+/ <a target="${javadoc.target}" href="https://pragmatickm.com/password/">Password</a>
+/ <a target="${javadoc.target}" href="${project.url}">Model</a>]]></javadoc.breadcrumbs>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
     <!-- SonarQube -->
