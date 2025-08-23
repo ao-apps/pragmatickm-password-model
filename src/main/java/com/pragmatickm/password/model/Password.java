@@ -215,12 +215,12 @@ public class Password extends Element {
 
   @Override
   public String getLabel() {
-    //if (username != null) {
-    //  return username;
-    //}
-    //if (href != null) {
-    //  return href;
-    //}
+    // if (username != null) {
+    //   return username;
+    // }
+    // if (href != null) {
+    //   return href;
+    // }
     String p = password;
     if (p != null) {
       return p;
