@@ -31,7 +31,7 @@ def upstreamProjects = [
   '../../oss/collections', // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
   '../../oss/lang', // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
   '../../oss/net-types', // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
-  '../../semanticcms-1.x/core/model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
+  '../../semanticcms-2.x/core/model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
 ]
 
 /******************************************************************************************
